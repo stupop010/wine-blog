@@ -4,9 +4,11 @@ import { useStaticQuery, graphql } from "gatsby"
 import { ThemeProvider } from "styled-components"
 
 import Header from "./header/header"
+import NavBar from "./navBar/navBar"
 import GlobalStyle from "./globalStyle"
 import theme from "./themeStyle"
-import "./layout.css"
+
+import "./index.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,6 +26,7 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <Header siteTitle={data.site.siteMetadata.title} />
       <div>
+        <NavBar />
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with

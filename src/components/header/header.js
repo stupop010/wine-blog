@@ -7,7 +7,7 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: center;
   align-center: center;
-  padding: 1.5rem 0;
+  padding: 1.1rem 0;
 `
 const Title = styled.h1`
   font-size: 2.5rem;
