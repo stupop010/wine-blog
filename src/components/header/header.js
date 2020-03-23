@@ -10,7 +10,7 @@ const HeaderContainer = styled.header`
   padding: 1.1rem 0;
 `
 const Title = styled.h1`
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-family: "PT Sans", sans-serif;
   text-transform: uppercase;
   color: ${({ theme }) => theme.primaryColor};
@@ -19,9 +19,9 @@ const Title = styled.h1`
 const TitleSpan = styled.span`
   font-family: "Liu Jian Mao Cao", cursive;
   display: block;
-  padding-left: 4rem;
-  margin: -0.8rem;
-  font-size: 2rem;
+  padding-left: 5.5rem;
+  margin: -1.2rem;
+  font-size: 2.5rem;
 `
 
 const Header = ({ siteTitle }) => (
