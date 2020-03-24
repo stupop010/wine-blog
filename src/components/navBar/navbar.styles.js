@@ -31,20 +31,6 @@ export const Search = styled.div`
   display: flex;
   align-items: center;
 `
-export const SocialList = styled.ul`
-  display: flex;
-  margin-right: 1rem;
-
-  li {
-    list-style: none;
-    margin: 0 0.3rem;
-
-    &:hover {
-      cursor: pointer;
-      opacity: 0.5;
-    }
-  }
-`
 
 export const SearchForm = styled.form`
   display: flex;

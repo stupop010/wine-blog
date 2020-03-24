@@ -2,14 +2,18 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import { HomeContainer } from "./home.styles"
+import HomeBlogs from "./homeBlogs"
+
+import { HomeContainer, HomeMainSection } from "./home.styles"
 
 const Home = () => {
-  const { contentfulAsset } = useStaticQuery(graphql`
+  const { contentfulHeroPic } = useStaticQuery(graphql`
     query HeroPic {
-      contentfulAsset {
-        fluid(quality: 100) {
-          ...GatsbyContentfulFluid
+      contentfulHeroPic {
+        picture {
+          fluid(quality: 100) {
+            ...GatsbyContentfulFluid
+          }
         }
       }
     }
@@ -19,11 +23,15 @@ const Home = () => {
     <HomeContainer>
       <div>
         <Img
-          fluid={contentfulAsset.fluid}
+          fluid={contentfulHeroPic.picture.fluid}
           imgStyle={{ objectFit: "cover" }}
           style={{ height: "500px" }}
         />
       </div>
+      <HomeMainSection>
+        <HomeBlogs />
+        <div style={{ height: "700px", color: "blue" }}>grid two</div>
+      </HomeMainSection>
     </HomeContainer>
   )
 }

@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Stuart Doney",
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^13.4.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
