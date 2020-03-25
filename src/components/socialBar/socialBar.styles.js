@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const SocialContainer = styled.div`
+  display: inline-block;
   ul {
     display: flex;
     margin-right: 1rem;

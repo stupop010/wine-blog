@@ -2,7 +2,10 @@ import React from "react"
 import Img from "gatsby-image"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { useStaticQuery, graphql } from "gatsby"
-import { HomeHeadBlog } from "./home.styles"
+
+import SocialBar from "../socialBar/socialBar"
+
+import { HomeHeadBlog, HomeBlogList, CreatedBy } from "./home.styles"
 
 const HomeBlogs = () => {
   const { allContentfulBlog } = useStaticQuery(graphql`
@@ -34,27 +37,39 @@ const HomeBlogs = () => {
   const blogList = allContentfulBlog.edges.slice(1)
 
   const data = blogList.map(({ node }) => {
-    return <h2>{node.title}</h2>
-    return documentToReactComponents(node.body.json)
+    return (
+      <div>
+        <Img
+          fluid={node.blogImage.fluid}
+          style={{ height: "220px", width: "100%", borderRadius: "20px" }}
+        />
+        <h3>{node.title}</h3>
+        {documentToReactComponents(node.blogSummary.json)}
+        <CreatedBy>
+          Posted by <span>{node.author}</span> on
+          <span> {node.createdAt}</span>
+        </CreatedBy>
+      </div>
+    )
   })
 
   return (
     <div>
       <HomeHeadBlog>
         <h2>{firstBlog.title}</h2>
-        <Img
-          fluid={firstBlog.blogImage.fluid}
-          style={{ height: "300px" }}
-          imgStyle={{ objectFit: "cover" }}
-        />
-        <p>
+        <Img fluid={firstBlog.blogImage.fluid} style={{ height: "300px" }} />
+        <CreatedBy>
           Posted by <span>{firstBlog.author}</span> on
           <span> {firstBlog.createdAt}</span>
-        </p>
+        </CreatedBy>
 
         <div>{documentToReactComponents(firstBlog.blogSummary.json)}</div>
         <button>Read More</button>
+        <div>
+          Share: <SocialBar />
+        </div>
       </HomeHeadBlog>
+      <HomeBlogList>{data}</HomeBlogList>
     </div>
   )
 }

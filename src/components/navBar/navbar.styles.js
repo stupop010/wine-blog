@@ -6,9 +6,9 @@ export const NavBarContainer = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 0.6rem 0.5rem;
-  box-shadow: 0.25rem 0 0.25rem rgba(0, 0, 0, 0.25);
   line-height: 1.6rem;
   color: ${({ theme }) => theme.primaryDark};
+  box-shadow: rgba(0, 0, 0, 0.25) 0.25rem 0px 0.25rem;
 `
 
 export const List = styled.ul`

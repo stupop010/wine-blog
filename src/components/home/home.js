@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 
 import HomeBlogs from "./homeBlogs"
 
-import { HomeContainer, HomeMainSection } from "./home.styles"
+import { HomeContainer, HomeMainSection, HomeHero } from "./home.styles"
 
 const Home = () => {
   const { contentfulHeroPic } = useStaticQuery(graphql`
@@ -21,13 +21,13 @@ const Home = () => {
 
   return (
     <HomeContainer>
-      <div>
+      <HomeHero>
         <Img
           fluid={contentfulHeroPic.picture.fluid}
           imgStyle={{ objectFit: "cover" }}
           style={{ height: "500px" }}
         />
-      </div>
+      </HomeHero>
       <HomeMainSection>
         <HomeBlogs />
         <div style={{ height: "700px", color: "blue" }}>grid two</div>
