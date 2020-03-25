@@ -21,7 +21,6 @@ export const HomeHeadBlog = styled.div`
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 1rem;
-    text-transform: capitalize;
   }
 
   button {
@@ -59,7 +58,6 @@ export const HomeBlogList = styled.div`
 
     h3 {
       margin: 0.8rem 0;
-      text-transform: capitalize;
     }
 
     p {

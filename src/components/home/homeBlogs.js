@@ -1,7 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 import SocialBar from "../socialBar/socialBar"
 
@@ -18,6 +18,7 @@ const HomeBlogs = () => {
             title
             createdAt(formatString: "MMMM, Do, YYYY")
             updatedAt(fromNow: true)
+            slug
             blogImage {
               fluid(quality: 100) {
                 ...GatsbyContentfulFluid_tracedSVG
@@ -39,11 +40,13 @@ const HomeBlogs = () => {
   const data = blogList.map(({ node }) => {
     return (
       <div>
-        <Img
-          fluid={node.blogImage.fluid}
-          style={{ height: "220px", width: "100%", borderRadius: "20px" }}
-        />
-        <h3>{node.title}</h3>
+        <Link to={`/blog/${node.slug}`}>
+          <Img
+            fluid={node.blogImage.fluid}
+            style={{ height: "220px", width: "100%", borderRadius: "20px" }}
+          />
+          <h3>{node.title}</h3>
+        </Link>
         {documentToReactComponents(node.blogSummary.json)}
         <CreatedBy>
           Posted by <span>{node.author}</span> on
@@ -64,7 +67,11 @@ const HomeBlogs = () => {
         </CreatedBy>
 
         <div>{documentToReactComponents(firstBlog.blogSummary.json)}</div>
-        <button>Read More</button>
+
+        <button>
+          <Link to={`/blog/${firstBlog.slug}`}>Read More</Link>
+        </button>
+
         <div>
           Share: <SocialBar />
         </div>
