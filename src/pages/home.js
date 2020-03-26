@@ -4,11 +4,11 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Home from "../components/home/home"
 
-const IndexPage = () => (
+const HomePage = () => (
   <Layout>
     <SEO title="Home" />
     <Home />
   </Layout>
 )
 
-export default IndexPage
+export default HomePage

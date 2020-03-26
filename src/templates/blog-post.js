@@ -6,6 +6,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Layout from "../components/layout"
 import SocialBar from "../components/socialBar/socialBar"
 import { BlogComponent, Link, AuthorBar } from "./blog-post.styles"
+import SEO from "../components/seo"
 
 export const query = graphql`
   query($slug: String!) {
@@ -29,13 +30,11 @@ export const query = graphql`
 const options = {
   renderNode: {
     "embedded-asset-block": node => {
-      console.log(node)
       const src = node.data.target.fields.file["en-US"].url
       const alt = node.data.target.fields.title["en-US"]
       return <img src={src} alt={alt} />
     },
     hyperlink: (node, children) => {
-      console.log(node)
       return <Link href={node.data.uri}>{children}</Link>
     },
   },
@@ -47,6 +46,7 @@ const BlogPosts = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title={contentfulBlog.title} />
       <BlogComponent>
         <Img
           fluid={contentfulBlog.blogImage.fluid}

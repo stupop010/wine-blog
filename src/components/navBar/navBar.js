@@ -10,19 +10,19 @@ const NavBar = () => {
     <NavBarContainer>
       <List>
         <li>
-          <Link>home</Link>
+          <Link to="/home">home</Link>
         </li>
         <li>
-          <Link>blog</Link>
+          <Link to="/blog">blog</Link>
         </li>
         <li>
-          <Link>gallery</Link>
+          <Link to="/gallery">gallery</Link>
         </li>
         <li>
-          <Link>about</Link>
+          <Link to="/about">about</Link>
         </li>
         <li>
-          <Link>contact</Link>
+          <Link to="/contact">contact</Link>
         </li>
       </List>
 
