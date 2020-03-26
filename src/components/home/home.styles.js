@@ -19,8 +19,13 @@ export const HomeHeadBlog = styled.div`
   color: ${({ theme }) => theme.primaryDark};
   h2 {
     font-size: 2.5rem;
+    font-family: "Merriweather", serif;
     text-align: center;
     margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 0.7rem;
   }
 
   button {
@@ -58,6 +63,7 @@ export const HomeBlogList = styled.div`
 
     h3 {
       margin: 0.8rem 0;
+      font-family: "Merriweather", serif;
     }
 
     p {

@@ -1,17 +1,19 @@
 import React from "react"
-
+import Img from "gatsby-image"
 import { graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 
 import Layout from "../components/layout"
+import SocialBar from "../components/socialBar/socialBar"
+import { BlogComponent, Link, AuthorBar } from "./blog-post.styles"
 
 export const query = graphql`
   query($slug: String!) {
     contentfulBlog(slug: { eq: $slug }) {
       slug
-      createdAt
+      createdAt(formatString: "MMMM, Do, YYYY")
       author
+      title
       body {
         json
       }
@@ -34,18 +36,31 @@ const options = {
     },
     hyperlink: (node, children) => {
       console.log(node)
-      return <a href={node.data.uri}>{children}</a>
+      return <Link href={node.data.uri}>{children}</Link>
     },
   },
 }
 
 const BlogPosts = ({ data }) => {
-  console.log(data)
+  const { contentfulBlog } = data
+  console.log(contentfulBlog)
+
   return (
     <Layout>
-      <div>
-        {documentToReactComponents(data.contentfulBlog.body.json, options)}
-      </div>
+      <BlogComponent>
+        <Img
+          fluid={contentfulBlog.blogImage.fluid}
+          style={{ height: "400px" }}
+        />
+        <h1>{contentfulBlog.title}</h1>
+        <AuthorBar>
+          <p>
+            Posted by {contentfulBlog.author} on {contentfulBlog.createdAt}
+          </p>
+          <SocialBar />
+        </AuthorBar>
+        {documentToReactComponents(contentfulBlog.body.json, options)}
+      </BlogComponent>
     </Layout>
   )
 }

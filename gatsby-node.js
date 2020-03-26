@@ -34,25 +34,4 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { slug },
     })
   })
-  //   allContentfulBlog.edges.map(({ node }) => console.log(node.title))
-
-  // // Create blog post pages.
-  // result.data.allMarkdownRemark.edges.forEach(edge => {
-  //   createPage({
-  //     // Path for this page — required
-  //     path: `${edge.node.frontmatter.slug}`,
-  //     component: blogPostTemplate,
-  //     context: {
-  //       // Add optional context data to be inserted
-  //       // as props into the page component..
-  //       //
-  //       // The context data can also be used as
-  //       // arguments to the page GraphQL query.
-  //       //
-  //       // The page "path" is always available as a GraphQL
-  //       // argument.
-  //     },
-  //   })
-  // })
-  //   })
 }

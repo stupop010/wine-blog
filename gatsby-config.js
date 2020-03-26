@@ -22,6 +22,14 @@ module.exports = {
         accessToken: process.env.ACCESS_TOKEN,
       },
     },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["PT Sans", "Liu Jian Mao Cao", "Noto Sans"],
+        },
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     // {
