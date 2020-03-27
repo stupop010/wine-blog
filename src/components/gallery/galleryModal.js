@@ -1,10 +1,20 @@
 import React from "react"
 import Img from "gatsby-image"
-import BackgroundImage from "gatsby-background-image"
+import { motion } from "framer-motion"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faPlus } from "@fortawesome/free-solid-svg-icons"
-
-import { ModalContainer, Close } from "./gallery.styles"
+import {
+  faPlus,
+  faChevronRight,
+  faChevronLeft,
+} from "@fortawesome/free-solid-svg-icons"
+import {
+  ModalContainer,
+  CloseBtn,
+  Chevron,
+  HeroSection,
+  Carousel,
+  PictureTitle,
+} from "./gallery.styles"
 
 const GalleryModal = ({
   pictures,
@@ -18,30 +28,50 @@ const GalleryModal = ({
     toggleModal()
   }
 
+  const toggleImgLeft = () => {
+    if (picIndex === 0) return setPicIndex(pictures.length - 1)
+    setPicIndex(picIndex - 1)
+  }
+
+  const toggleImgRight = () => {
+    if (picIndex === pictures.length - 1) return setPicIndex(0)
+    setPicIndex(picIndex + 1)
+  }
+
   return (
     <ModalContainer open={open}>
       {open && (
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <Close>
+        <motion.div style={{ display: "flex", flexDirection: "column" }}>
+          <CloseBtn>
             <FontAwesomeIcon icon={faPlus} size="2x" onClick={closeModal} />
-          </Close>
-          <div>
-            {/* <Img
-              fluid={pictures[picIndex].fluid}
-              style={{ height: "450px", width: "600px", margin: "auto" }}
-              imgStyle={{ objectFit: "contain" }}
-            /> */}
-            <BackgroundImage
-              Tag="section"
-              fluid={pictures[picIndex].fluid}
-              backgroundColor={`#040e18`}
-            >
-              <h2>gatsby-background-image</h2>
-            </BackgroundImage>
-            <div>hello</div>
-            <div>hello</div>
-          </div>
-          <div>
+          </CloseBtn>
+
+          <HeroSection>
+            <Chevron>
+              <FontAwesomeIcon
+                icon={faChevronLeft}
+                size="3x"
+                onClick={toggleImgLeft}
+              />
+            </Chevron>
+            <div>
+              <Img
+                fluid={pictures[picIndex].fluid}
+                style={{ height: "400px", width: "700px" }}
+                imgStyle={{ objectFit: "contain" }}
+              />
+            </div>
+            <Chevron>
+              <FontAwesomeIcon
+                icon={faChevronRight}
+                size="3x"
+                onClick={toggleImgRight}
+              />
+            </Chevron>
+          </HeroSection>
+          <PictureTitle>{pictures[picIndex].title}</PictureTitle>
+          <Carousel>
+            {console.log(pictures[0])}
             <div>
               <Img
                 fluid={
@@ -49,16 +79,27 @@ const GalleryModal = ({
                     ? pictures[picIndex - 1].fluid
                     : pictures[pictures.length - 1].fluid
                 }
+                style={{ height: "170px", width: "200px" }}
               />
             </div>
             <div>
-              <Img fluid={pictures[picIndex].fluid} />
+              <Img
+                fluid={pictures[picIndex].fluid}
+                style={{ height: "170px", width: "200px" }}
+              />
             </div>
             <div>
-              <Img fluid={pictures[picIndex + 1].fluid} />
+              <Img
+                fluid={
+                  picIndex !== pictures.length - 1
+                    ? pictures[picIndex + 1].fluid
+                    : pictures[0].fluid
+                }
+                style={{ height: "170px", width: "200px" }}
+              />
             </div>
-          </div>
-        </div>
+          </Carousel>
+        </motion.div>
       )}
     </ModalContainer>
   )

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 
 export const GalleryContainer = styled.section`
   width: 80%;
@@ -27,7 +27,7 @@ export const ModalContainer = styled.div`
   background-color: rgba(102, 98, 101, 0.9);
 `
 
-export const Close = styled.div`
+export const CloseBtn = styled.div`
   align-self: flex-end;
   padding: 1rem 1rem;
   transform: rotate(45deg);
@@ -39,4 +39,37 @@ export const Close = styled.div`
       opacity: 0.6;
     }
   }
+`
+
+export const HeroSection = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const Chevron = styled.div`
+  color: ${({ theme }) => theme.primaryDark};
+  border-radius: 4px;
+  padding: 0.5rem;
+  transition: all 300ms;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.6;
+    background: black;
+    color: white;
+  }
+`
+export const Carousel = styled.section`
+  display: flex;
+  justify-content: center;
+
+  div {
+    margin: 0 0.4rem;
+  }
+`
+export const PictureTitle = styled.h2`
+  margin: 0.5rem;
+  text-align: center;
+  color: ${({ theme }) => theme.primaryDark};
 `
