@@ -19,11 +19,24 @@ export const ModalContainer = styled.div`
   display: ${({ open }) => (open ? "block" : "none")};
   position: fixed;
   z-index: 1;
-  padding-top: 100px;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
   background-color: rgba(102, 98, 101, 0.9);
+`
+
+export const Close = styled.div`
+  align-self: flex-end;
+  padding: 1rem 1rem;
+  transform: rotate(45deg);
+  color: ${({ theme }) => theme.primaryLight};
+
+  svg {
+    &:hover {
+      cursor: pointer;
+      opacity: 0.6;
+    }
+  }
 `

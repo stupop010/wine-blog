@@ -1,7 +1,10 @@
 import React from "react"
 import Img from "gatsby-image"
+import BackgroundImage from "gatsby-background-image"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPlus } from "@fortawesome/free-solid-svg-icons"
 
-import { ModalContainer } from "./gallery.styles"
+import { ModalContainer, Close } from "./gallery.styles"
 
 const GalleryModal = ({
   pictures,
@@ -16,12 +19,27 @@ const GalleryModal = ({
   }
 
   return (
-    <ModalContainer open={open} onClick={closeModal}>
+    <ModalContainer open={open}>
       {open && (
-        <div>
-          <div>close</div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <Close>
+            <FontAwesomeIcon icon={faPlus} size="2x" onClick={closeModal} />
+          </Close>
           <div>
-            <Img fluid={pictures[picIndex].fluid} />
+            {/* <Img
+              fluid={pictures[picIndex].fluid}
+              style={{ height: "450px", width: "600px", margin: "auto" }}
+              imgStyle={{ objectFit: "contain" }}
+            /> */}
+            <BackgroundImage
+              Tag="section"
+              fluid={pictures[picIndex].fluid}
+              backgroundColor={`#040e18`}
+            >
+              <h2>gatsby-background-image</h2>
+            </BackgroundImage>
+            <div>hello</div>
+            <div>hello</div>
           </div>
           <div>
             <div>
