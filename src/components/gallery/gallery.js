@@ -15,7 +15,7 @@ const Gallery = () => {
       allContentfulAsset {
         nodes {
           fluid(quality: 100) {
-            ...GatsbyContentfulFluid_tracedSVG
+            ...GatsbyContentfulFluid
           }
           id
         }
