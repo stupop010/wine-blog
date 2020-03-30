@@ -3,7 +3,7 @@ import Img from "gatsby-image"
 import { graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout"
 import SocialBar from "../components/socialBar/socialBar"
 import { BlogComponent, Link, AuthorBar } from "./blog-post.styles"
 import SEO from "../components/seo"
@@ -42,8 +42,6 @@ const options = {
 
 const BlogPosts = ({ data }) => {
   const { contentfulBlog } = data
-  console.log(contentfulBlog)
-
   return (
     <Layout>
       <SEO title={contentfulBlog.title} />

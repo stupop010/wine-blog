@@ -3,7 +3,8 @@ import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
   body {
-     color: ${props => (props.theme === "purple" ? "purple" : "white")};
+    height: 100%;
+    color: ${props => (props.theme === "purple" ? "purple" : "white")};
   },
   ul {
     margin: 0;

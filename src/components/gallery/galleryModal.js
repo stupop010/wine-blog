@@ -1,6 +1,5 @@
 import React from "react"
 import Img from "gatsby-image"
-import { motion } from "framer-motion"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faPlus,
@@ -39,9 +38,14 @@ const GalleryModal = ({
   }
 
   return (
-    <ModalContainer open={open}>
+    <ModalContainer
+      open={open}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: open ? 1 : 0 }}
+      transition={{ duration: 0.3 }}
+    >
       {open && (
-        <motion.div style={{ display: "flex", flexDirection: "column" }}>
+        <div style={{ display: "flex", flexDirection: "column" }}>
           <CloseBtn>
             <FontAwesomeIcon icon={faPlus} size="2x" onClick={closeModal} />
           </CloseBtn>
@@ -99,7 +103,7 @@ const GalleryModal = ({
               />
             </div>
           </Carousel>
-        </motion.div>
+        </div>
       )}
     </ModalContainer>
   )

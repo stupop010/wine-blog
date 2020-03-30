@@ -3,12 +3,12 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { ThemeProvider } from "styled-components"
 
-import Header from "./header/header"
-import NavBar from "./navBar/navBar"
-import GlobalStyle from "./globalStyle"
-import theme from "./themeStyle"
+import Header from "../header/header"
+import GlobalStyle from "../globalStyle"
+import theme from "../themeStyle"
 
-import "./index.css"
+import { Container } from "./layout.styles"
+import "../index.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,16 +24,15 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div>
-        <NavBar />
-        <main>{children}</main>
-        <footer>
+      <Container>
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <main style={{ flex: 1 }}>{children}</main>
+        <footer style={{ padding: "0.5rem" }}>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
-      </div>
+      </Container>
     </ThemeProvider>
   )
 }

@@ -1,4 +1,5 @@
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
+import { motion } from "framer-motion"
 
 export const GalleryContainer = styled.section`
   width: 80%;
@@ -15,7 +16,7 @@ export const Image = styled.div`
     cursor: pointer;
   }
 `
-export const ModalContainer = styled.div`
+export const ModalContainer = styled(motion.div)`
   display: ${({ open }) => (open ? "block" : "none")};
   position: fixed;
   z-index: 1;
