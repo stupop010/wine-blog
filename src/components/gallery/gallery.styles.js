@@ -7,7 +7,7 @@ export const GalleryContainer = styled.section`
   display: flex;
   flex-wrap: wrap;
 `
-export const Image = styled.div`
+export const Image = styled(motion.div)`
   width: 200px;
   height: 200px;
   margin: 1rem auto;

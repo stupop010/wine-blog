@@ -40,7 +40,13 @@ const Gallery = () => {
       />
       <GalleryContainer>
         {allContentfulAsset.nodes.map((asset, index) => (
-          <Image key={asset.id} onClick={() => toggleModal(index)}>
+          <Image
+            key={asset.id}
+            onClick={() => toggleModal(index)}
+            initial={{ x: 1000, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: (1 * index) / 15 }}
+          >
             <Img
               fluid={asset.fluid}
               imgStyle={{ objectFit: "cover" }}
