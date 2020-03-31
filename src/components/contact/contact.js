@@ -13,22 +13,22 @@ const Contact = () => {
     message: "",
   })
 
-  const { file } = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "contact_pic.jpg" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+  // const { file } = useStaticQuery(graphql`
+  //   query {
+  //     file(relativePath: { eq: "contact_pic.jpg" }) {
+  //       childImageSharp {
+  //         fluid(quality: 100) {
+  //           ...GatsbyImageSharpFluid
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
   return (
     <BackgroundImage
       Tag="section"
-      fluid={file.childImageSharp.fluid}
+      // fluid={file.childImageSharp.fluid}
       backgroundColor={`#040e18`}
       style={{ height: "100%" }}
     >
