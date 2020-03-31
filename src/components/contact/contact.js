@@ -1,10 +1,9 @@
-import React, { useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import BackgroundImage from "gatsby-background-image"
+import React from "react"
 
 import useForm from "../../hooks/useForm"
 
-import { ContactContainer } from "./contact.styles"
+import { ContactContainer, ContactBackground } from "./contact.styles"
+import ContactPic from "../../images/contact_pic.jpg"
 
 const Contact = () => {
   const { inputs, handleSubmit, handleInputChange } = useForm({
@@ -13,25 +12,8 @@ const Contact = () => {
     message: "",
   })
 
-  const { file } = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "contact_pic.jpg" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
   return (
-    <BackgroundImage
-      Tag="section"
-      fluid={file.childImageSharp.fluid}
-      backgroundColor={`#040e18`}
-      style={{ height: "100%" }}
-    >
+    <ContactBackground style={{ backgroundImage: `url('${ContactPic}')` }}>
       <ContactContainer>
         <h1>Contact Us</h1>
         <form onSubmit={handleSubmit}>
@@ -65,7 +47,7 @@ const Contact = () => {
           <button type="submit">send</button>
         </form>
       </ContactContainer>
-    </BackgroundImage>
+    </ContactBackground>
   )
 }
 

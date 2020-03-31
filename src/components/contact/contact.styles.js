@@ -1,7 +1,14 @@
 import styled from "styled-components"
 import device from "../deviceSizes"
 
-export const ContactContainer = styled.section`
+export const ContactBackground = styled.section`
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+`
+
+export const ContactContainer = styled.div`
   min-height: 70vh;
   display: flex;
   flex-direction: column;
