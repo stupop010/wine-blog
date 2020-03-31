@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import HomeBlogs from "./homeBlogs"
+import Archives from "../archives/archives"
 
 import { HomeContainer, HomeMainSection, HomeHero } from "./home.styles"
 
@@ -30,7 +31,9 @@ const Home = () => {
       </HomeHero>
       <HomeMainSection>
         <HomeBlogs />
-        <div style={{ height: "700px", color: "blue" }}>grid two</div>
+        <div>
+          <Archives />
+        </div>
       </HomeMainSection>
     </HomeContainer>
   )
