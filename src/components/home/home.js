@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 
 import HomeBlogs from "./homeBlogs"
 import Archives from "../archives/archives"
+import NewsLetter from "../newsLetter/newsLetter"
 
 import { HomeContainer, HomeMainSection, HomeHero } from "./home.styles"
 
@@ -33,6 +34,7 @@ const Home = () => {
         <HomeBlogs />
         <div>
           <Archives />
+          <NewsLetter />
         </div>
       </HomeMainSection>
     </HomeContainer>

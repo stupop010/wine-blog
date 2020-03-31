@@ -10,8 +10,9 @@ export const ArchivesContainer = styled.div`
     background: ${({ theme }) => theme.primaryColor};
     color: white;
     border-radius: 10px;
-    max-width: 170px;
+    max-width: 200px;
     margin: auto;
+    text-transform: uppercase;
   }
 
   ul {
