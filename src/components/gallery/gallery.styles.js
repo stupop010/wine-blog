@@ -69,7 +69,7 @@ export const Chevron = styled.div`
 export const Carousel = styled.section`
   display: flex;
   justify-content: center;
-
+  overflow: hidden;
   div {
     margin: 0 0.4rem;
   }

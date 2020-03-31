@@ -15,6 +15,8 @@ import {
   PictureTitle,
 } from "./gallery.styles"
 
+import useWindowDimensions from "../../hooks/useWindowDimensions"
+
 const GalleryModal = ({
   pictures,
   open,
@@ -22,6 +24,8 @@ const GalleryModal = ({
   setPicIndex,
   toggleModal,
 }) => {
+  const { width } = useWindowDimensions()
+
   const closeModal = () => {
     setPicIndex(null)
     toggleModal()
@@ -61,7 +65,10 @@ const GalleryModal = ({
             <div>
               <Img
                 fluid={pictures[picIndex].fluid}
-                style={{ height: "400px", width: "700px" }}
+                style={{
+                  height: "400px",
+                  width: width > 800 ? "700px" : "350px",
+                }}
                 imgStyle={{ objectFit: "contain" }}
               />
             </div>
@@ -75,7 +82,6 @@ const GalleryModal = ({
           </HeroSection>
           <PictureTitle>{pictures[picIndex].title}</PictureTitle>
           <Carousel>
-            {console.log(pictures[0])}
             <div>
               <Img
                 fluid={
@@ -83,7 +89,10 @@ const GalleryModal = ({
                     ? pictures[picIndex - 1].fluid
                     : pictures[pictures.length - 1].fluid
                 }
-                style={{ height: "170px", width: "200px" }}
+                style={{
+                  height: "170px",
+                  width: width > 800 ? "200px" : "200px",
+                }}
               />
             </div>
             <div>
