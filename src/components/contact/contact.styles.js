@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import device from "../deviceSizes"
 
 export const ContactContainer = styled.section`
   min-height: 70vh;
@@ -18,6 +19,15 @@ export const ContactContainer = styled.section`
   form {
     width: 30%;
     text-align: center;
+    @media ${device.laptop} {
+      width: 50%;
+    }
+    @media ${device.tablet} {
+      width: 70%;
+    }
+    @media ${device.mobileM} {
+      width: 95%;
+    }
   }
 
   div {

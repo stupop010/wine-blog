@@ -4,7 +4,6 @@ const theme = {
   primaryLight: "#FFFFFF",
   primaryLightGrey: "#726f71",
   primaryHover: "#343078",
-  mobile: "576px",
 }
 
 export default theme

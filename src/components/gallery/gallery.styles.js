@@ -1,11 +1,16 @@
 import styled from "styled-components"
 import { motion } from "framer-motion"
+import device from "../deviceSizes"
 
 export const GalleryContainer = styled.section`
   width: 80%;
   margin: 1.5rem auto;
   display: flex;
   flex-wrap: wrap;
+
+  @media ${device.tablet} {
+    width: 100%;
+  }
 `
 export const Image = styled(motion.div)`
   width: 200px;

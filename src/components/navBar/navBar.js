@@ -10,7 +10,7 @@ const NavBar = () => {
     <NavBarContainer>
       <List>
         <li>
-          <Link to="/home">home</Link>
+          <Link to="/">home</Link>
         </li>
         <li>
           <Link to="/blog">blog</Link>
