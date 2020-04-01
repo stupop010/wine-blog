@@ -6,7 +6,12 @@ import HomeBlogs from "./homeBlogs"
 import Archives from "../archives/archives"
 import NewsLetter from "../newsLetter/newsLetter"
 
-import { HomeContainer, HomeMainSection, HomeHero } from "./home.styles"
+import {
+  HomeContainer,
+  HomeMainSection,
+  HomeHero,
+  RightSection,
+} from "./home.styles"
 
 const Home = () => {
   const { contentfulHeroPic } = useStaticQuery(graphql`
@@ -32,10 +37,10 @@ const Home = () => {
       </HomeHero>
       <HomeMainSection>
         <HomeBlogs />
-        <div>
+        <RightSection>
           <Archives />
           <NewsLetter />
-        </div>
+        </RightSection>
       </HomeMainSection>
     </HomeContainer>
   )

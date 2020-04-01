@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import device from "../deviceSizes"
 
 export const HomeContainer = styled.div`
   width: 90%;
@@ -13,10 +14,15 @@ export const HomeMainSection = styled.section`
   display: grid;
   grid-template-columns: 2fr 1fr;
   margin-top: 5rem;
+
+  @media ${device.laptop} {
+    display: block;
+  }
 `
 
 export const HomeHeadBlog = styled.div`
   color: ${({ theme }) => theme.primaryDark};
+
   h2 {
     font-size: 2.5rem;
     font-family: "Merriweather", serif;
@@ -34,6 +40,7 @@ export const HomeHeadBlog = styled.div`
     padding: 0.2rem 0.5rem;
     margin-bottom: 0.7rem;
     color: ${({ theme }) => theme.primaryLightGrey};
+
     &:hover {
       cursor: pointer;
       color: ${({ theme }) => theme.primaryLight};
@@ -55,6 +62,7 @@ export const HomeBlogList = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-top: 2rem;
+
   div {
     width: 50%;
     margin: 0.7rem 0;
@@ -72,5 +80,24 @@ export const HomeBlogList = styled.div`
       line-height: 1.3;
       color: ${({ theme }) => theme.primaryLightGrey};
     }
+  }
+
+  @media ${device.tablet} {
+    display: block;
+
+    div {
+      width: 100%;
+      margin-top: 2.5rem;
+    }
+  }
+`
+export const RightSection = styled.div`
+  @media ${device.laptop} {
+    width: 60%;
+    margin: auto;
+  }
+
+  @media ${device.tablet} {
+    width: 90%;
   }
 `
