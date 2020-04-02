@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import device from "../components/deviceSizes"
 
 export const BlogComponent = styled.section`
   width: 50%;
@@ -16,6 +17,22 @@ export const BlogComponent = styled.section`
   img {
     width: 100%;
   }
+
+  @media ${device.laptop} {
+    width: 80%;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media ${device.mobileL} {
+    width: 95%;
+  }
 `
 export const Link = styled.a`
   text-decoration: underline;
@@ -31,4 +48,16 @@ export const AuthorBar = styled.div`
   display: flex;
   justify-content: space-between;
   opacity: 0.7;
+
+  @media ${device.laptop} {
+    flex-direction: column;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    div {
+      margin: 0.5rem 0;
+    }
+  }
 `
