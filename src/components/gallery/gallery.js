@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Img from "gatsby-image"
 
-import PaginationList from "../pagination/paginationList"
+import PaginationList from "../paginationList/paginationList"
 import GalleryModal from "./galleryModal"
 
 import { GalleryContainer, Image } from "./gallery.styles"
@@ -43,7 +43,7 @@ const Gallery = ({ pictures, numPages, currentPage }) => {
         ))}
       </GalleryContainer>
       <PaginationList
-        totalRecords={pictures}
+        slug="gallery"
         numPages={numPages}
         currentPage={currentPage}
       />

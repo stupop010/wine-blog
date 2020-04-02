@@ -22,7 +22,7 @@ const GalleryTemplate = ({ data, pageContext }) => {
 }
 
 export const ImageListQuery = graphql`
-  query blogListQuery($skip: Int!, $limit: Int!) {
+  query($skip: Int!, $limit: Int!) {
     allContentfulAsset(limit: $limit, skip: $skip) {
       edges {
         node {

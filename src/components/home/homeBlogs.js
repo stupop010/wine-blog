@@ -14,10 +14,8 @@ const HomeBlogs = () => {
         edges {
           node {
             author
-            date(formatString: "MMMM, Do, YYYY")
             title
             createdAt(formatString: "MMMM, Do, YYYY")
-            updatedAt(fromNow: true)
             slug
             blogImage {
               fluid(quality: 100) {

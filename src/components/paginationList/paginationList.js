@@ -5,19 +5,19 @@ import PaginationLink from "./paginationLink"
 import PaginationItem from "./paginationItem"
 import { Pagination } from "./pagination.styles"
 
-const PaginationList = ({ numPages, currentPage }) => {
+const PaginationList = ({ numPages, currentPage, slug }) => {
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
   const previousPage =
-    currentPage - 1 === 1 ? "/gallery" : `/gallery/${currentPage - 1}`
-  const nextPage = `/gallery/${currentPage + 1}`
+    currentPage - 1 === 1 ? `/${slug}` : `/${slug}/${currentPage - 1}`
+  const nextPage = `/${slug}/${currentPage + 1}`
 
   return (
     <Pagination>
       <ul>
         {isFirst ? (
           <PaginationItem disabled>
-            <PaginationLink previous href="/gallery" />
+            <PaginationLink previous href={`/${slug}`} />
           </PaginationItem>
         ) : (
           <PaginationItem>
@@ -29,7 +29,7 @@ const PaginationList = ({ numPages, currentPage }) => {
           currentPage === i + 1 ? (
             <PaginationItem active key={`page-number${i + 1}`}>
               <PaginationLink
-                href={`/${i === 0 ? "gallery" : "gallery/" + (i + 1)}`}
+                href={`/${i === 0 ? slug : `${slug}/` + (i + 1)}`}
               >
                 {i + 1}
               </PaginationLink>
@@ -37,7 +37,7 @@ const PaginationList = ({ numPages, currentPage }) => {
           ) : (
             <PaginationItem key={`page-number${i + 1}`}>
               <PaginationLink
-                href={`/${i === 0 ? "gallery" : "gallery/" + (i + 1)}`}
+                href={`/${i === 0 ? slug : `${slug}/` + (i + 1)}`}
               >
                 {i + 1}
               </PaginationLink>
