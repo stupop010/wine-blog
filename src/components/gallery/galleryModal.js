@@ -64,7 +64,7 @@ const GalleryModal = ({
             </Chevron>
             <div>
               <Img
-                fluid={pictures[picIndex].fluid}
+                fluid={pictures[picIndex].node.fluid}
                 style={{
                   height: "400px",
                   width: width > 800 ? "700px" : "350px",
@@ -86,8 +86,8 @@ const GalleryModal = ({
               <Img
                 fluid={
                   picIndex !== 0
-                    ? pictures[picIndex - 1].fluid
-                    : pictures[pictures.length - 1].fluid
+                    ? pictures[picIndex - 1].node.fluid
+                    : pictures[pictures.length - 1].node.fluid
                 }
                 style={{
                   height: "170px",
@@ -97,7 +97,7 @@ const GalleryModal = ({
             </div>
             <div>
               <Img
-                fluid={pictures[picIndex].fluid}
+                fluid={pictures[picIndex].node.fluid}
                 style={{ height: "170px", width: "200px" }}
               />
             </div>
@@ -105,8 +105,8 @@ const GalleryModal = ({
               <Img
                 fluid={
                   picIndex !== pictures.length - 1
-                    ? pictures[picIndex + 1].fluid
-                    : pictures[0].fluid
+                    ? pictures[picIndex + 1].node.fluid
+                    : pictures[0].node.fluid
                 }
                 style={{ height: "170px", width: "200px" }}
               />
