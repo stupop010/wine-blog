@@ -13,7 +13,6 @@ const defaultProps = {
 }
 
 const Gallery = ({ pictures, numPages, currentPage }) => {
-  console.log(pictures)
   const [picIndex, setPicIndex] = useState(null)
   const [open, setOpen] = useState(false)
 
