@@ -7,12 +7,7 @@ import GalleryModal from "./galleryModal"
 import { GalleryContainer, Image } from "./gallery.styles"
 
 const defaultProps = {
-  pictures: [
-    {
-      id: 0,
-      fluid: {},
-    },
-  ],
+  pictures: [{}],
   numPages: 0,
   currentPage: 0,
 }
@@ -26,6 +21,8 @@ const Gallery = ({ pictures, numPages, currentPage }) => {
 
     setOpen(!open)
   }
+
+  if (!pictures.length > 0) return null
 
   return (
     <>
