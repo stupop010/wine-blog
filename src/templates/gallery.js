@@ -5,8 +5,6 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 import Gallery from "../components/gallery/gallery"
 
-import "bootstrap/dist/css/bootstrap.min.css"
-
 const GalleryTemplate = ({ data, pageContext }) => {
   const { numPages, currentPage } = pageContext
 
