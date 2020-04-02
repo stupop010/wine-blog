@@ -6,7 +6,14 @@ import GalleryModal from "./galleryModal"
 
 import { GalleryContainer, Image } from "./gallery.styles"
 
+const defaultProps = {
+  pictures: [{}, {}],
+  numPages: 0,
+  currentPage: 0,
+}
+
 const Gallery = ({ pictures, numPages, currentPage }) => {
+  console.log(pictures)
   const [picIndex, setPicIndex] = useState(null)
   const [open, setOpen] = useState(false)
 
@@ -50,5 +57,7 @@ const Gallery = ({ pictures, numPages, currentPage }) => {
     </>
   )
 }
+
+Gallery.defaultProps = defaultProps
 
 export default Gallery
