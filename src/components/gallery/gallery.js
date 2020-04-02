@@ -7,7 +7,14 @@ import GalleryModal from "./galleryModal"
 import { GalleryContainer, Image } from "./gallery.styles"
 
 const defaultProps = {
-  pictures: [{}],
+  pictures: [
+    {
+      node: {
+        id: 0,
+        fluid: {},
+      },
+    },
+  ],
   numPages: 0,
   currentPage: 0,
 }
