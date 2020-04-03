@@ -4,7 +4,12 @@ import device from "../deviceSizes"
 export const BlogPagContainer = styled.section`
   max-width: 700px;
   margin: auto;
+  text-align: center;
   color: black;
+
+  h1 {
+    margin-top: 1rem;
+  }
 
   @media ${device.tablet} {
     max-width: 550px;
@@ -18,8 +23,9 @@ export const BlogPagContainer = styled.section`
 export const Blog = styled.div`
   display: flex;
   overflow: hidden;
+  text-align: start;
   width: 100%;
-  min-height: 200px;
+  max-height: 300px;
   margin: 1.5rem 0;
   padding: 0.2rem;
   border: 1px solid #666;
@@ -27,7 +33,7 @@ export const Blog = styled.div`
 export const BlogContent = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 70%;
   margin: 0 0.3rem;
 

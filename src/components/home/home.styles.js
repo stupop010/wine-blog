@@ -2,9 +2,13 @@ import styled from "styled-components"
 import device from "../deviceSizes"
 
 export const HomeContainer = styled.div`
-  width: 90%;
+  max-width: 1000px;
   margin: auto;
   padding: 0.2rem 0;
+
+  @media ${device.laptop} {
+    width: 90%;
+  }
 `
 export const HomeHero = styled.div`
   box-shadow: 1px 1px 2px 0px rgba(166, 164, 166, 0.7);

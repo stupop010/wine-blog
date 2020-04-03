@@ -24,7 +24,7 @@ export const ContactContainer = styled.div`
   }
 
   form {
-    width: 30%;
+    width: 400px;
     text-align: center;
     @media ${device.laptop} {
       width: 50%;

@@ -3,7 +3,7 @@ import device from "../deviceSizes"
 
 export const AboutContainer = styled.section`
   display: flex;
-  width: 90%;
+  max-width: 1090px;
   height: 100%;
   margin: 3rem auto 0 auto;
   color: ${({ theme }) => theme.primaryDark};
@@ -15,8 +15,7 @@ export const AboutContainer = styled.section`
 
   @media ${device.tablet} {
     display: block;
-
-    div {
+    max-width: 90% div {
       width: 95%;
     }
   }

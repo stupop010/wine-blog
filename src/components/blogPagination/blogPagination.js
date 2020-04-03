@@ -28,6 +28,7 @@ const BlogPagination = ({ blogs, numBlogPages, currentPage }) => {
 
   return (
     <BlogPagContainer>
+      <h1>Wine Blogs</h1>
       {blogList}
       <PaginationList
         numPages={numBlogPages}
