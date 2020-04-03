@@ -10,7 +10,7 @@ const ClientSideOnlyLazyGallery = React.lazy(() =>
 )
 
 const GalleryTemplate = ({ data, pageContext }) => {
-  const isSSR = typeof window === "undefined"
+  const isSSR = typeof document === "undefined"
 
   const { numPages, currentPage } = pageContext
 
