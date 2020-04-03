@@ -12,7 +12,7 @@ export const GalleryContainer = styled.section`
     width: 100%;
   }
 `
-export const Image = styled(motion.div)`
+export const Image = styled.div`
   width: 200px;
   height: 200px;
   margin: 1rem auto;
@@ -21,7 +21,7 @@ export const Image = styled(motion.div)`
     cursor: pointer;
   }
 `
-export const ModalContainer = styled(motion.div)`
+export const ModalContainer = styled.div`
   display: ${({ open }) => (open ? "block" : "none")};
   position: fixed;
   z-index: 1;
