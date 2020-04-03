@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { motion } from "framer-motion"
+// import { motion } from "framer-motion"
 import device from "../deviceSizes"
 
 export const GalleryContainer = styled.section`
