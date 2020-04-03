@@ -10,7 +10,8 @@ const ClientSideOnlyLazyGallery = React.lazy(() =>
 )
 
 const GalleryTemplate = ({ data, pageContext }) => {
-  const isSSR = typeof document === "undefined"
+  console.log(window)
+  const isSSR = typeof window === "undefined" || !window.document
 
   const { numPages, currentPage } = pageContext
 
@@ -47,19 +48,4 @@ export const ImageListQuery = graphql`
   }
 `
 
-// import React from "react"
-
-// const MyPage = () => {
-//   const isSSR = typeof window === "undefined"
-//   return (
-//     <>
-//       {!isSSR && (
-//         <React.Suspense fallback={<div />}>
-//           <ClientSideOnlyLazy />
-//         </React.Suspense>
-//       )}
-//     </>
-//   )
-// }
-
-// export default GalleryTemplate
+export default GalleryTemplate
