@@ -1,9 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Loadable from "@loadable/component"
 
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
-import Gallery from "../components/gallery/gallery"
+// import Gallery from "../components/gallery/gallery"
+
+const LoadableGallery = Loadable(() => import("../components/gallery/gallery"))
 
 const GalleryTemplate = ({ data, pageContext }) => {
   const { numPages, currentPage } = pageContext
@@ -14,7 +17,7 @@ const GalleryTemplate = ({ data, pageContext }) => {
       <SEO
         title={`Gallery ${currentPage === 1 ? "" : "| Page " + currentPage}`}
       />
-      <Gallery
+      <LoadableGallery
         pictures={pictures}
         numPages={numPages}
         currentPage={currentPage}
