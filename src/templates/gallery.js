@@ -4,7 +4,6 @@ import Loadable from "@loadable/component"
 
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
-// import Gallery from "../components/gallery/gallery"
 
 const LoadableGallery = Loadable(() => import("../components/gallery/gallery"))
 

@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-// import { motion } from "framer-motion"
+import { motion } from "framer-motion"
 
 import { AboutContainer } from "./about.styles"
 
@@ -26,21 +26,21 @@ const About = () => {
 
   return (
     <AboutContainer>
-      <div
-      // initial={{ y: 500 }}
-      // animate={{ y: 0 }}
-      // transition={{ duration: 0.5 }}
+      <motion.div
+        initial={{ y: 500 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
       >
         <h1>{title}</h1>
         <p>{description.description}</p>
-      </div>
-      <div
-      // initial={{ x: 1000 }}
-      // animate={{ x: 0 }}
-      // transition={{ duration: 0.5 }}
+      </motion.div>
+      <motion.div
+        initial={{ x: 1000 }}
+        animate={{ x: 0 }}
+        transition={{ duration: 0.5 }}
       >
         <Img fluid={aboutPicture.fluid} style={{ width: "100%" }} />
-      </div>
+      </motion.div>
     </AboutContainer>
   )
 }

@@ -9,7 +9,6 @@ import { BlogPagContainer, Blog, BlogContent } from "./blogPagination.styles"
 
 const BlogPagination = ({ blogs, numBlogPages, currentPage }) => {
   const blogList = blogs.map(({ node }) => {
-    console.log(node)
     return (
       <Blog>
         <Img

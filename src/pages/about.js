@@ -1,13 +1,15 @@
 import React from "react"
+import Loadable from "@loadable/component"
 
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
-import About from "../components/about/about"
+
+const LoadableAbout = Loadable(() => import("../components/about/about"))
 
 const SecondPage = () => (
   <Layout>
     <SEO title="About" />
-    <About />
+    <LoadableAbout />
   </Layout>
 )
 
