@@ -33,21 +33,21 @@ const Gallery = ({ pictures, numPages, currentPage }) => {
 
   return (
     <>
-      <GalleryModal
-        pictures={pictures}
-        open={open}
-        picIndex={picIndex}
-        toggleModal={toggleModal}
-        setPicIndex={setPicIndex}
-      />
       <GalleryContainer>
+        <GalleryModal
+          pictures={pictures}
+          open={open}
+          picIndex={picIndex}
+          toggleModal={toggleModal}
+          setPicIndex={setPicIndex}
+        />
         {pictures.map(({ node }, index) => (
           <Image
             key={node.id}
             onClick={() => toggleModal(index)}
-            // initial={{ x: 1000, opacity: 0 }}
-            // animate={{ x: 0, opacity: 1 }}
-            // transition={{ duration: (1 * index) / 5 }}
+            initial={{ x: 1000, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: (1 * index) / 5 }}
           >
             <Img
               fluid={node.fluid}

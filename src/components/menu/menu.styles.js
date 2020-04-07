@@ -7,6 +7,7 @@ export const MenuContainer = styled.div`
   left: 0;
   height: 100vh;
   width: 100vw;
+  overflow: auto;
   background: rgba(38, 37, 36, 0.9);
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => (open ? `translateY(0)` : `translateY(-100%)`)};

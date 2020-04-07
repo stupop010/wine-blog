@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
@@ -8,6 +9,7 @@ import { BlogPagContainer, Blog, BlogContent } from "./blogPagination.styles"
 
 const BlogPagination = ({ blogs, numBlogPages, currentPage }) => {
   const blogList = blogs.map(({ node }) => {
+    console.log(node)
     return (
       <Blog>
         <Img
@@ -15,7 +17,9 @@ const BlogPagination = ({ blogs, numBlogPages, currentPage }) => {
           style={{ height: "100%", width: "30%", alignSelf: "center" }}
         />
         <BlogContent>
-          <h2>{node.title}</h2>
+          <Link to={`blog/${node.slug}`}>
+            <h2>{node.title}</h2>
+          </Link>
           {documentToReactComponents(node.blogSummary.json)}
           <div>
             Posted by <span>{node.author}</span> on

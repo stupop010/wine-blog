@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { ThemeProvider } from "styled-components"
@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <ToggleBurger.Provider value={{ open, toggleBurger }}>
-        <Container>
+        <Container open={open}>
           <Header siteTitle={data.site.siteMetadata.title} />
           <Menu />
           <main>{children}</main>

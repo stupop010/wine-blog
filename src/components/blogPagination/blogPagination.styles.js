@@ -36,6 +36,7 @@ export const BlogContent = styled.div`
   justify-content: space-around;
   width: 70%;
   margin: 0 0.3rem;
+  padding: 0 0.3rem;
 
   h2 {
     margin: 0.2rem 0;

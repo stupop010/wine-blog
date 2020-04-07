@@ -82,7 +82,7 @@ const GalleryModal = ({
           </HeroSection>
           <PictureTitle>{pictures[picIndex].title}</PictureTitle>
           <Carousel>
-            <div>
+            <div onClick={() => setPicIndex(picIndex - 1)}>
               <Img
                 fluid={
                   picIndex !== 0
@@ -95,13 +95,13 @@ const GalleryModal = ({
                 }}
               />
             </div>
-            <div>
+            <div onClick={() => setPicIndex(picIndex)}>
               <Img
                 fluid={pictures[picIndex].node.fluid}
                 style={{ height: "170px", width: "200px" }}
               />
             </div>
-            <div>
+            <div onClick={() => setPicIndex(picIndex + 1)}>
               <Img
                 fluid={
                   picIndex !== pictures.length - 1

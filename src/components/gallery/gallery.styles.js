@@ -1,5 +1,5 @@
 import styled from "styled-components"
-// import { motion } from "framer-motion"
+import { motion } from "framer-motion"
 import device from "../deviceSizes"
 
 export const GalleryContainer = styled.section`
@@ -7,12 +7,11 @@ export const GalleryContainer = styled.section`
   margin: 1.5rem auto;
   display: flex;
   flex-wrap: wrap;
-
   @media ${device.tablet} {
     width: 100%;
   }
 `
-export const Image = styled.div`
+export const Image = styled(motion.div)`
   width: 200px;
   height: 200px;
   margin: 1rem auto;
@@ -21,14 +20,14 @@ export const Image = styled.div`
     cursor: pointer;
   }
 `
-export const ModalContainer = styled.div`
+export const ModalContainer = styled(motion.div)`
   display: ${({ open }) => (open ? "block" : "none")};
   position: fixed;
   z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: auto;
   background-color: rgba(102, 98, 101, 0.9);
 `

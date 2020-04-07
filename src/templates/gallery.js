@@ -11,7 +11,9 @@ const GalleryTemplate = ({ data, pageContext }) => {
   const pictures = data.allContentfulAsset.edges
   return (
     <Layout>
-      <SEO title="Gallery" />
+      <SEO
+        title={`Gallery ${currentPage === 1 ? "" : "| Page " + currentPage}`}
+      />
       <Gallery
         pictures={pictures}
         numPages={numPages}
